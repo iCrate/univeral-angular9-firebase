@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Actions } from '@ngrx/effects';
 import { Store, StoreModule } from '@ngrx/store';
 
-import { MockActions } from './mocks/actions.mock';
+// import { MockActions } from './mocks/actions.mock';
 import { MockStore } from './mocks/store.mock';
 
 @NgModule({
@@ -10,12 +10,8 @@ import { MockStore } from './mocks/store.mock';
   providers: [
     {
       provide: Store,
-      useClass: MockStore
+      useClass: MockStore,
     },
-    {
-      provide: Actions,
-      useFactory: () => new MockActions()
-    }
-  ]
+  ],
 })
 export class StoreTestingModule {}
